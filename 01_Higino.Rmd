@@ -1,0 +1,27 @@
+---
+title: "01_Higino"
+author: "Gracielle Higino"
+date: "2019-10-03"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I chose the [Roman Emperors database](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-08-13) from Wikipedia.
+
+Loading the data:
+```{r, warnings=FALSE}
+emperors <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-08-13/emperors.csv")
+```
+
+Inspecting the variables:
+```{r}
+
+```
+
