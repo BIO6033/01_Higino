@@ -28,7 +28,7 @@ packages <- c("ggplot2", "dplyr", "tidyr", "readr")
 ipak(packages)
 ```
 
-Loading the data:
+# Loading and inspecting the data:
 ```{r, warnings=FALSE}
 emperors <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-08-13/emperors.csv")
 ```
@@ -38,7 +38,7 @@ Inspecting the variables:
 glimpse(emperors)
 ```
 
-Who kills emperors usually?
+# Who kills emperors usually?
 ```{r}
 ggplot(data = emperors, aes(x=killer)) +
   geom_bar(stat="count") +
