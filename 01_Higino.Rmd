@@ -29,7 +29,7 @@ ipak(packages)
 ```
 
 # Loading and inspecting the data:
-```{r, warnings=FALSE}
+```{r, warnings=FALSE, results='hide'}
 emperors <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-08-13/emperors.csv")
 ```
 
@@ -45,7 +45,7 @@ ggplot(data = emperors, aes(x=killer)) +
   theme(axis.text.x = element_text(angle = 90))
 ```
 
-## Are causes of killing related to where do you were born?
+# Are causes of killing related to where do you were born?
 
 ```{r}
 ggplot(emperors, aes(x=killer, color = birth_prv)) +
