@@ -45,3 +45,11 @@ ggplot(data = emperors, aes(x=killer)) +
   theme(axis.text.x = element_text(angle = 90))
 ```
 
+## Are causes of killing related to where do you were born?
+
+```{r}
+ggplot(emperors, aes(x=killer, color = birth_prv)) +
+  geom_point(stat="count") +
+  theme(axis.text.x = element_text(angle = 90))
+```
+
