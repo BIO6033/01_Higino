@@ -14,6 +14,19 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 I chose the [Roman Emperors database](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-08-13) from Wikipedia.
+```{r load packages, echo=FALSE,results='hide', warning=FALSE,message=FALSE}
+# https://gist.github.com/stevenworthington/3178163
+ipak <- function(pkg){
+    new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+    if (length(new.pkg)) 
+        install.packages(new.pkg, dependencies = TRUE)
+    sapply(pkg, require, character.only = TRUE)
+}
+
+# usage
+packages <- c("ggplot2", "dplyr", "tidyr", "readr")
+ipak(packages)
+```
 
 Loading the data:
 ```{r, warnings=FALSE}
@@ -22,6 +35,13 @@ emperors <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/t
 
 Inspecting the variables:
 ```{r}
+glimpse(emperors)
+```
 
+Who kills emperors usually?
+```{r}
+ggplot(data = emperors, aes(x=killer)) +
+  geom_bar(stat="count") +
+  theme(axis.text.x = element_text(angle = 90))
 ```
 
