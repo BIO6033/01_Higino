@@ -45,6 +45,22 @@ ggplot(data = emperors, aes(x=killer)) +
   theme(axis.text.x = element_text(angle = 90))
 ```
 
+
+# Arhama: Is there a relation between the emperor rise and who kills him?
+
+```{r}
+E = emperors %>%
+       select(name,rise,killer)%>%
+          arrange (name)
+E
+
+ggplot(E, aes(x=killer, col=rise)) +
+  geom_point(stat="count") + theme_dark() +theme(axis.text.x = element_text(angle = 90)) 
+```
+
+
+
+
 # Are causes of killing related to where do you were born?
 
 ```{r}
